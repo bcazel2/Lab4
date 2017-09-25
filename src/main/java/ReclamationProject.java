@@ -8,19 +8,40 @@
  * 5. Remove unnecessary comments as appropriate
  */
 
-public class ReclamationProject
-{
-    static String doit(String a,String b){
-        if (a.length() > b.length()){
-            String c = a; // TODO: set c to a
-            a=b; b=c;}
-        String r = (a.equals(b)) ? "" : ""; // I love the ternary operator!
+/**Example code for practicing good code writing.
+ *
+ * @parameters
+ * @returns
+ *
+ */
+public class ReclamationProject {
+
+    /**Finds longest substring in both words.
+     *
+     * @param a first unchangeable string
+     * @param b second unchangeable string
+     *
+     * @return longest substring found in both words
+     */
+    static String doit(final String a, final String b) {
+        String shortString = a;
+        String longString = b;
+        if (shortString.length() > longString.length()) {
+            String c = shortString; //set c to a
+            shortString = longString;
+            longString = c;
+             }
+        String r = ""; // I hate the ternary operator!
         /*
          * For loop with i
          */
-        for (int i = 0; i < a.length(); i++) { for (int j = a.length() - i; j > 0; j--) {
-                for (int k = 0; k < b.length()- j; k++) {
-                    r = (a.regionMatches(i, b, k, j) && j >r.length()) ? a.substring(i,i + j) : r; // Do it!
-                        }} // Ah yeah
-        } return r; }
+        for (int i = 0; i < shortString.length(); i++) {
+            for (int j = shortString.length() - i; j > 0; j--) {
+                for (int k = 0; k < longString.length() - j; k++) {
+                    r = shortString.substring(i, i + j); // Do it!
+                      }
+                } // Ah yeah
+        }
+        return r;
+    }
 }
